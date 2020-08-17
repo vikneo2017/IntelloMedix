@@ -18,13 +18,13 @@ from werkzeug.utils import secure_filename
 ENV = 'prod'
 
 if ENV == 'dev':
-    DATABASE = 'postgresql://postgres:DbrekjdDF@localhost/inmedix'
+    DATABASE = ''
 else:
-    DATABASE = 'postgres://bcvrivnoywcipq:a94f617cc7498b8fcf193ce7ac80394e9001a5419a1e9c76b81feb8db0e2031e@ec2-54-75-229-28.eu-west-1.compute.amazonaws.com:5432/d9k01u0pg9e12m'
-    # DATABASE = 'postgres://wijnhvmhgoyedf:802a6792ac41f4004228097c5ea019ce4189e525ceaf422049f8a393f128618a@ec2-54-217-213-79.eu-west-1.compute.amazonaws.com:5432/d3pevdbbhd87me'
+    DATABASE = ''
+    # DATABASE = ''
 # конфигурация
 DEBUG = True
-SECRET_KEY = 'fdgfh78@#5?>gfhf89dx,v06k'
+SECRET_KEY = ''
 USERNAME = 'admin'
 PASSWORD = '123'
 TESTING = False
@@ -35,10 +35,10 @@ ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 if ENV == 'dev':
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:DbrekjdDF@localhost/inmedix'
+    app.config['SQLALCHEMY_DATABASE_URI'] = ''
 else:
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://bcvrivnoywcipq:a94f617cc7498b8fcf193ce7ac80394e9001a5419a1e9c76b81feb8db0e2031e@ec2-54-75-229-28.eu-west-1.compute.amazonaws.com:5432/d9k01u0pg9e12m'
-    # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://wijnhvmhgoyedf:802a6792ac41f4004228097c5ea019ce4189e525ceaf422049f8a393f128618a@ec2-54-217-213-79.eu-west-1.compute.amazonaws.com:5432/d3pevdbbhd87me'
+    app.config['SQLALCHEMY_DATABASE_URI'] = ''
+    # app.config['SQLALCHEMY_DATABASE_URI'] = ''
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = SECRET_KEY
 

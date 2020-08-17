@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>IntelloMedix Протокол исследования</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+       m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+       ym(66315595, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+       });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/66315595" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous">
+    </script>
+
+    <script>
+    jQuery(function ($) {
+        const tableToPrint = document.getElementById('printMe');
+
+        function printData(tableToPrint) {
+            Popup($(tableToPrint).html());
+        }
+
+        function Popup(data) {
+            const mywindow = window.open('', 'printMe', 'height=600, width=1000');
+            // стили таблицы
+            mywindow.document.write('<link rel="stylesheet" href="/static/styles/bootstrap.css" type="text/css" />');
+            mywindow.document.write(tableToPrint.outerHTML);
+            mywindow.document.close(); // для IE >= 10
+            mywindow.focus();          // для IE >= 10
+            mywindow.print();
+            mywindow.close();
+            return true;
+        }
+
+        $(document).on('click', '#printTable', function () {
+            printData();
+            return false;
+        });
+    });
+    </script>
+</head>
+
+<body class="text-center">
+
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+        <h5 class="my-0 mr-md-auto font-weight-normal"><a href="/index2"><img src="{{url_for('static',filename='images/logo3.png')}}" alt="IntelloMedix"></a></h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="/index2">О компании</a>
+        <a class="p-2 text-dark" href="/tarifs2">Тарифы</a>
+        <a class="p-2 text-dark" href="/support2">Техподдержка</a>
+        <a class="p-2 text-dark" href="/contact2">Контакты</a>
+        <a class="p-2 text-dark" href="/profile">Профиль</a>
+        <a class="p-2 text-dark" href="/story">Журнал</a>
+        <a class="btn btn-outline-secondary" href="/start">Распознать изображение</a>
+    </nav>
+        <a class="btn btn-outline-primary" href="/logout">Выйти из профиля</a>
+</div>
+
+    <!-- <div class="body"> -->
+<div class="table-responsive" align="center" id="printMe">
+    <table align="center" class="table table-hover table-bordered table-sm" width="60%" margin="auto">
+            <tbody>
+                <tr>
+                    <td colspan="10" align="left" bgcolor="#d3d3d3"><b align="left">Название учреждения: {{ nameorg }}</td>
+                </tr>
+                <tr>
+                    <td colspan="5" align="left"><b>Модальность:</b> Ультразвуковая диагностика</td>
+                    <td colspan="5" align="left"><b>Область исследования:</b> Молочные железы</td>
+                </tr>
+                <tr>
+                    <td colspan="5" align="left"><b>Дата и время исследования:</b> {{data}} </td>
+                    <td colspan="5" align="left"><b>Исследование выполнено:</b> {{ medname }} </td>
+                </tr>
+                <tr>
+                    <td colspan="10" align="left" bgcolor="#d3d3d3"><b>Паспортная часть:</b> </td>
+                </tr>
+                <tr>
+                    <td colspan="3" align="left"><b>Фамилия:</b> {{surnamepat}}</td>
+                    <td colspan="4" align="left"><b>Имя:</b>{{ namepat }} </td>
+                    <td colspan="3" align="left"><b>Отчество:</b> {{ middlenamepat }} </td>
+                </tr>
+                <tr>
+                    <td colspan="3" align="left"><b>№ исследования:</b>{{ number }}</td>
+                    <td colspan="2" align="left"><b>Пол:</b> {{ sex }} </td>
+                    <td colspan="3" align="left"><b>Дата рождения:</b> {{ birthdate }} </td>
+                    <td colspan="2" align="left"><b>Возраст:</b> {{ age }}</td>
+                </tr>
+                <tr>
+                    <td colspan="10" align="left" bgcolor="#d3d3d3"><b align="left">Клиническая информация:</b> </td>
+                </tr>
+                <tr>
+                    <td colspan="10" align="left"><b>Первичное/повторное исследование:</b> {{ research }}</td>
+                </tr>
+                <tr>
+                    <td colspan="10" align="left"><b>Цель исследования:</b> скрининг молочной железы с помощью ультразвуковой диагностики</td>
+                </tr>
+                <tr>
+                    <td colspan="10" align="left" bgcolor="#d3d3d3"><b align="left">Технические особенности</td>
+                </tr>
+                <tr>
+                    <td colspan="10" align="left"><b>Наименование медицинской техники:</b> {{ nameequip }}</td>
+                </tr>
+                <tr>
+                    <td colspan="10" align="left"><b>Версия алгоритма искуственного интеллекта IntelloMediX®:</b> 1.0.0.</td>
+                </tr>
+                <tr>
+                    <td colspan="10" align="left"><b>Примечания:</b>{{ comments }}</td>
+                </tr>
+                <tr>
+                    <td colspan="10" align="left" bgcolor="#d3d3d3"><b align="left">Описание:</b></td>
+                </tr>
+                <tr>
+                    <td colspan="6" align="center"><b>Оценки снимков искусственным интеллектом IntelloMediX®</b></td>
+                    <td colspan="1" align="center"><b>Нет патологии</b></td>
+                    <td colspan="1" align="center"><b>Есть патология</b></td>
+                    <td colspan="2" align="center"><b>Степень уверенности алгоритма ИИ</b></td>
+                </tr>
+                <tr>
+                    <td colspan="6" align="left">Оценка снимка левой груди</td>
+                    <td colspan="1" align="center">{{ leftnopatology }}</td>
+                    <td colspan="1" align="center">{{ leftpatology }}</td>
+                    <td colspan="2" align="center">{{ proba_left }}</td>
+                </tr>
+                <tr>
+                    <td colspan="6" align="left">Оценка снимка правой груди</td>
+                    <td colspan="1" align="center">{{ rightnopatology }}</td>
+                    <td colspan="1" align="center">{{ rightpatology }}</td>
+                    <td colspan="2" align="center">{{ proba_right }}</td>
+                </tr>
+                <tr>
+                    <td colspan="10" align="left" bgcolor="#d3d3d3"><b align="left">Заключение:</td>
+                </tr>
+                <tr>
+                    <td colspan="10" align="left">{{ vyvod }}
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="10" align="left" bgcolor="#d3d3d3"><b align="left">Рекомендации:</td>
+                </tr>
+                <tr>
+                    <td colspan="10" align="left">{{ recomendation }}</td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center" bgcolor="#d3d3d3"><b>Дата</td>
+                    <td colspan="6" align="center" bgcolor="#d3d3d3"><b>Врач ультравуковой диагностики (Ф.И.О.)</td>
+                    <td colspan="2" align="center" bgcolor="#d3d3d3"><b>Подпись</td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">{{data}}</td>
+                    <td colspan="6" align="center">{{ medname }}</td>
+                    <td colspan="2" align="center">_________</td>
+                </tr>
+                <tr>
+                    <td colspan="4" align="center"><b>{{ address }}</td>
+                    <td colspan="3" align="center"><b>{{ emailorg }}</td>
+                    <td colspan="3" align="center"><b>{{ tel }}
+                                                    <br> www: {{ website }} </br> </td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+        <button class="btn btn-info" id="printTable">Распечатать протокол</button>
+            <!--<img src="{{url_for('static',filename='images/logo.png')}}" alt="pyy">
+            <h2>Результат работы ИИ:</h2>
+            <p2 style="
+                margin-top: 60px;
+                font-size: 1.8em;
+                color: fuchsia;">Класс по классификации BI-RADS: {{res}}</p2> -->
+    </div>
+
+            <div>
+                    <p style="margin-top:180px;
+                    font-size: 1.2em;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    color: darkmagenta
+                ">
+                        @Copyright 2020 IntelloMediX, LLC
+                    </p>
+                </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IntelloMedix анализ изображений IMG</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+       m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+       ym(66315595, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+       });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/66315595" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+</head>
+<body>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+        <h5 class="my-0 mr-md-auto font-weight-normal"><a href="/index2"><img src="{{url_for('static',filename='images/logo3.png')}}" alt="IntelloMedix"></a></h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="/index2">О компании</a>
+        <a class="p-2 text-dark" href="/tarifs2">Тарифы</a>
+        <a class="p-2 text-dark" href="/support2">Техподдержка</a>
+        <a class="p-2 text-dark" href="/contact2">Контакты</a>
+        <a class="p-2 text-dark" href="/profile">Профиль</a>
+        <a class="p-2 text-dark" href="/story">Журнал</a>
+        <a class="btn btn-outline-secondary" href="/start">Распознать изображение</a>
+    </nav>
+        <a class="btn btn-outline-primary" href="/logout">Выйти из профиля</a>
+    </div>
+	<div class="body">
+        <form action="/result" method="POST" enctype=multipart/form-data>
+            {% for cat, msg in get_flashed_messages(True) %}
+                <br><div class="flash {{cat}}"><b><font color="#8b0000">{{msg}}</font></b></div>
+            {% endfor %}
+        <h4>Информация о специалисте и оборудовании:</h4>
+        <br><label>Фамилия И.О. специалиста:</label> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+            <input type="text" name="medname" value="" style="width: 30%" requied />
+        <br><label>Наименование медицинской техники:</label> <input type="text" name="nameequip" value="" style="width: 30%" requied />
+        <br><label>Номер исследования: </label> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+            <input type="text" name="number" value="" style="width: 30%" requied />
+        <h4>Информация о пациенте:</h4>
+        <br><label>Фамилия:</label> &nbsp &nbsp &nbsp &nbsp &nbsp <input type="text" name="surnamepat" value="" requied />
+        &nbsp &nbsp &nbsp &nbsp &nbsp
+        <label>Пол: </label>
+            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+            <input type="radio" name="sex" id="option1" value="Женский" required > Женский </input>
+            <input type="radio" name="sex" id="option2" value="Мужской" required > Мужской </input>
+        <br><label>Имя: </label> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input type="text" name="namepat" value="" requied />
+        &nbsp &nbsp &nbsp &nbsp &nbsp
+        <label>Дата рождения: </label> <input type="date" name="birthdate" value="" style="width: 12%" required>
+        <br><label>Отчество: </label> &nbsp &nbsp &nbsp &nbsp &nbsp <input type="text" name="middlenamepat" value="" requied />
+        &nbsp &nbsp &nbsp &nbsp &nbsp
+        <br><label>Примечания: </label> &nbsp &nbsp <input type="text" name="comments" value="" style="width: 42%" requied />
+        <br><label>Исследование: </label>
+            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+            <input type="radio" name="research" id="option1" value="Первичное" required > Первичное </input>
+            <input type="radio" name="research" id="option2" value="Повторное" required > Повторное </input>
+        <h4>Загрузите изображения</h4>
+            <h5><b>Обязательна загрузка двух снимков!</b></h5>
+        <br><label>Загрузите снимок левой груди: </label>&nbsp &nbsp<input type="file" name="file" required>
+        <br><label>Загрузите снимок правой груди: </label>&nbsp<input type="file" name="file2" required>
+        <input type="submit" class="btn-primary" value="Получить протокол" />
+        </form>
+	</div>
+    <div>
+		<p style="margin-top:90px;
+		font-size: 1.2em;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		color: darkmagenta
+	">
+			@Copyright 2020 IntelloMediX, LLC
+		</p>
+	</div>
+</body>
+</html>

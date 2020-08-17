@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IntelloMedix администрирование</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+       m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+       ym(66315595, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+       });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/66315595" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+</head>
+<body>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+        <h5 class="my-0 mr-md-auto font-weight-normal"><a href="/index2"><img src="{{url_for('static',filename='images/logo3.png')}}" alt="IntelloMedix"></a></h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="/admin">Администрирование</a>
+    </nav>
+        <a class="btn btn-outline-primary" href="/logout">Выйти из профиля</a>
+    </div>
+	<div class="body">
+         <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+              <div align=center>
+                  <h1 class="font-weight-normal">Администрирование:</h1>
+                <a class="btn btn-outline-secondary" href="/register">Зарегистрировать нового пользователя</a>
+                <a class="btn btn-outline-secondary" href="/activation">Обновить/активировать статус пользователя</a>
+                <a class="btn btn-outline-secondary" href="/check">Проверить статус пользователя</a>
+              </div>
+              <div class="product-device shadow-sm d-none d-md-block"></div>
+              <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+         </div>
+	</div>
+    <div>
+		<p style="margin-top:90px;
+		font-size: 1.2em;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		color: darkmagenta
+	">
+			@Copyright 2020 IntelloMediX, LLC
+		</p>
+	</div>
+</body>
+</html>

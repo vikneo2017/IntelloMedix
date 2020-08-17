@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IntelloMedix Тарифы</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+       m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+       ym(66315595, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+       });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/66315595" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+</head>
+<body>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal"><a href="/"><img src="{{url_for('static',filename='images/logo3.png')}}" alt="IntelloMedix"></a></h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="/">О компании</a>
+        <a class="p-2 text-dark" href="/tarifs">Тарифы</a>
+        <a class="p-2 text-dark" href="/support">Техподдержка</a>
+        <a class="p-2 text-dark" href="/contact">Контакты</a>
+    </nav>
+        <a class="btn btn-outline-danger" href="/login">Войти </a>
+    </div>
+	<div class="body">
+        <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+        <h1 class="display-4">Тарифы</h1>
+        <p class="lead">Выберите наиболее удобный и выгодный для Вас тариф </p>
+        </div>
+        <div class="container">
+  <div class="card-deck mb-3 text-center">
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Free</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">0 руб <small class="text-muted">/ мес.</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>Тестовый режим</li>
+          <li>Доступ на 5 дней</li>
+          <li>Email поддержка</li>
+          <li>Неограниченное количество изображений</li>
+        </ul>
+          <button type="button" class="btn btn-lg btn-block btn-outline-primary"><a class='btn-link' href="/demo">Получить доступ</a></button>
+      </div>
+    </div>
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Enterprise</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title"> 15000 руб <small class="text-muted">/ мес.</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>до 100 пользователей</li>
+          <li>Доступ на 30 дней</li>
+          <li>Поддержка 24/7 </li>
+          <li>Неограниченное количество изображений</li>
+        </ul>
+          <button type="button" class="btn btn-lg btn-block btn-primary"><span style="color: white"><a class='btn-link' href="/buy"><span style="color: white">Начать пользоваться</span></span></button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+	</div>
+    <div>
+		<p style="margin-top:90px;
+		font-size: 1.2em;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		color: darkmagenta
+	">
+			@Copyright 2020 IntelloMediX, LLC
+		</p>
+	</div>
+</body>
+</html>
